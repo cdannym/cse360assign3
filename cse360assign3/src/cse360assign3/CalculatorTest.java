@@ -15,7 +15,7 @@ public class CalculatorTest {
 	@Test
 	public void testGetTotal() {
 		Calculator object = new Calculator();
-		int result = object.getTotal();
+		int result = object.getTotal(); // result is what the output actually is
 		assertEquals( 0, result );
 	}
 
@@ -60,7 +60,32 @@ public class CalculatorTest {
 
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator object = new Calculator();
+		object.add(2);
+		String result = object.getHistory(); 
+		String assertion = "0 + 2 "; //assertion is what I want the output to be
+		assertEquals( assertion, result );
+		
+		object.subtract(1);
+		result = object.getHistory();
+		assertion = "0 + 2 - 1 ";
+		assertEquals( assertion, result );
+		
+		object.multiply(4);
+		result = object.getHistory();
+		assertion = "0 + 2 - 1 * 4 ";
+		assertEquals( assertion, result );
+		
+		object.divide(2);
+		result = object.getHistory();
+		assertion = "0 + 2 - 1 * 4 / 2 ";
+		assertEquals( assertion, result );
+		
+		object.divide(0);
+		result = object.getHistory();
+		assertion = "0 + 2 - 1 * 4 / 2 / 0 ";
+		assertEquals( assertion, result );
+		
 	}
 
 }

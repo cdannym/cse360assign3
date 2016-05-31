@@ -99,6 +99,9 @@ public class OrderedIntList {
 			object.insert(11);
 			System.out.println("***Print method***");
 			object.print();
+			
+			System.out.println("\n\n");
+			
 		}
 		else {
 			System.out.println("No instrument testing");

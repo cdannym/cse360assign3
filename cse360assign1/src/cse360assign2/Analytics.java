@@ -1,13 +1,14 @@
 package cse360assign2;
 
 public class Analytics extends OrderedIntList{
-	public double mean = 0;
+	public double mean;
 	public int median = 0;
 	public int high = 0;
 	public int low = 0;
 	
 	public double mean(Analytics value){
 		if(counter != 0){
+			mean = 0;
 			for(int i = 0; i < counter; i++){
 				mean = mean + value.array[i];
 			}
@@ -26,7 +27,7 @@ public class Analytics extends OrderedIntList{
 				median = median / 2; 
 			}
 			else {
-				median = value.array[counter / 2 + 1];
+				median = value.array[counter / 2];
 			}
 		}
 		else{
